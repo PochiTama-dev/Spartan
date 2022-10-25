@@ -1,24 +1,22 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTimesCircle, faBars, faCommentDots, faBell } from '@fortawesome/free-solid-svg-icons'
-import Link from "next/link"
+import { SearchBar } from "./SearchBar"
+import { IconButtonHeader } from "./IconButtonHeader"
 
 export const NavBar = () => {
   return (
     <header className="header-container"> 
       <div>
-        <Link href='/'>
-          <FontAwesomeIcon className="logo-icon" icon={faBars} />
-        </Link>
-        <Link href="/s">
-          <FontAwesomeIcon className="logo-icon" icon={faTimesCircle}  />
-        </Link>
+        <IconButtonHeader icon={ faBars } navigateTo="/s"/>
+
+        <IconButtonHeader icon={ faTimesCircle } navigateTo="/"/>
       </div>
 
+      <SearchBar/> 
+
       <div>
-        <Link href="/sljs">
-          <FontAwesomeIcon className="logo-icon" icon={faCommentDots} /> 
-        </Link> 
-        <FontAwesomeIcon className="logo-icon" icon={faBell} />
+        <IconButtonHeader icon={ faCommentDots } navigateTo="/s"/>
+
+        <IconButtonHeader icon={ faBell } navigateTo="/s"/>
       </div>
     </header>
   )
