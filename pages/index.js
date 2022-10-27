@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-
+import { Footer } from '../components/footer/footer'
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -13,6 +13,9 @@ export default function Home() {
       <main className={styles.main}>
         <h1>Home</h1>
       </main>
+      <footer /* className={styles.footer} */>
+        <div className='footer-main'><Footer/></div>
+      </footer>
     </div>
   )
 }
