@@ -1,0 +1,257 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+:root {
+  --light: #fff;
+  --precense: #f5a34c;
+  --text: #555;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
+input.inputDate,
+input[type='radio']:checked+label.radioLabel,
+::placeholder,
+label.inputLabel,
+label.dateLabel,
+label.checkLabel,
+label.radioLabel,
+legend.genreLegend,
+button.buttonForm,
+span.linkForm {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+label.userAvatar,
+input.inputForm:focus,
+input.inputForm:not(:placeholder-shown),
+input.inputDate,
+input[type='radio']:checked+label.radioLabel,
+input[type='checkbox']:checked+label.checkLabel::before,
+legend.genreLegend,
+button.buttonForm {
+  box-shadow: 3px 3px 5px var(--shadow);
+}
+
+input[type='file'],
+input[type='radio'],
+input[type='checkbox'] {
+  display: none;
+}
+
+div.formContainer,
+form.form,
+label.userAvatar,
+label.inputLabel,
+label.dateLabel,
+label.checkLabel,
+label.radioLabel,
+div.radioContainer,
+div.inputContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input.inputDate,
+input[type='radio']:checked+label.radioLabel,
+label.checkLabel,
+label.radioLabel,
+span.linkForm {
+  font-size: 10px;
+}
+
+::placeholder,
+label.inputLabel,
+label.dateLabel,
+legend.genreLegend,
+button.buttonForm {
+  font-size: 12px;
+}
+
+label.dateLabel,
+label.userAvatar,
+input.inputForm,
+label.checkLabel,
+label.radioLabel,
+legend.genreLegend,
+span.linkForm {
+  margin-bottom: 20px;
+  color: var(--text);
+}
+
+form.form,
+input.inputForm,
+input.inputDate,
+input[type='radio']:checked+label.radioLabel,
+input[type='checkbox']:checked+label.checkLabel::before,
+button.buttonForm {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+/* Contenedor principal. */
+div.formContainer {
+  margin: 70px auto;
+  width: 100vw;
+  max-width: 450px;
+}
+
+/* Formulario. */
+form.form {
+  width: 90%;
+  flex-direction: column;
+  box-shadow: 5px 5px 15px var(--shadow);
+  border-radius: 5px;
+  padding: 20px 0px;
+}
+
+/* Avatar en login y register, en register la cámara permite subir imagen. */
+label.userAvatar {
+  width: 80px;
+  height: 90px;
+  border-radius: 50%;
+  font-size: 40px;
+  color: var(--precense);
+}
+
+/* Inputs y animación de nombre, apellido, correo y passwords. */
+div.inputContainer {
+  position: relative;
+  width: 100%;
+}
+
+input.inputForm {
+  width: 90%;
+  height: 30px;
+  border: 1px solid var(--text);
+  border-radius: 5px;
+  padding-left: 5px;
+  transition: all 0.3s ease;
+}
+
+label.inputLabel {
+  position: absolute;
+  background-color: var(--light);
+  padding: 0px 3px;
+  top: 7px;
+  left: 25px;
+  transition: all .3s ease;
+  color: var(--text);
+}
+
+input.inputForm:focus ~ label.inputLabel {
+  top: -8px;
+  color: var(--precense);
+}
+
+input.inputForm:focus {  
+  border: 2px solid var(--precense);
+}
+
+input.inputForm:not(:placeholder-shown)+label.inputLabel {
+  top: -8px;
+  color: var(--precense);
+}
+
+input.inputForm:not(:placeholder-shown) {
+  border: 2px solid var(--precense);
+}
+
+/* Input para cargar fecha de nacimiento. */
+input.inputDate {
+  margin-top: 5px;
+  border-radius: 5px;
+  padding: 7px;
+  background-color: var(--precense);
+  color: var(--light);
+}
+
+label.dateLabel {
+  flex-direction: column;
+}
+
+/* Input y animación para selección de género. */
+legend.genreLegend {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+label.radioLabel {
+  position: relative;
+  justify-content: space-around;
+  padding: 5px;
+  border: 1px solid var(--text);
+  border-radius: 5px;
+  transition: all 0.1s;
+}
+
+label.radioLabel::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--text);
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+div.radioContainer {
+  margin-top: 10px;
+  justify-content: space-around;
+}
+
+input[type='radio']:checked+label.radioLabel {
+  background-color: var(--precense);
+  color: var(--light);
+  transition: all 0.3s ease;
+}
+
+input[type='radio']:checked+label.radioLabel::before {
+  width: 6px;
+  height: 6px;
+  border: 4px solid var(--light);
+}
+
+/* Checkbox y animación para recordar contraseña y aceptar términos. */
+input[type='checkbox']:checked+label.checkLabel::before {
+  content: '✔';
+  text-align: center;
+  font-size: 15px;
+  color: var(--light);
+  width: 20px;
+  height: 20px;
+  background-color: var(--precense);
+}
+
+label.checkLabel::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  border: 2px solid var(--text);
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+/* Botón del formulario. */
+button.buttonForm {
+  border-radius: 5px;
+  width: 50%;
+  height: 35px;
+  background-color: var(--precense);
+  color: var(--light);
+}
+
+/* Enlace para navegar en los distintos formularios. */
+span.linkForm {
+  margin-top: 10px;
+  cursor: pointer;
+}
