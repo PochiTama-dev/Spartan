@@ -5,10 +5,12 @@ export const IconButtonHeader = ({ icon, navigateTo }) => {
 
   return (
     <Link href={ navigateTo }>
+      <div className="icon-button">
         <FontAwesomeIcon 
             className={`header-icon ${icon.iconName}-icon`} 
             icon={ icon } 
         />
+      </div>
     </Link>
   )
 }

@@ -1,12 +1,14 @@
-import { faTimesCircle, faBars, faCommentDots, faBell } from '@fortawesome/free-solid-svg-icons'
+import { faTimesCircle, faBars, faCommentDots, faBell, faUser } from '@fortawesome/free-solid-svg-icons'
 import { SearchBar } from "./SearchBar"
 import { IconButtonHeader } from "./IconButtonHeader"
+import { Dropdown } from './Dropdown'
 
 export const NavBar = () => {
   return (
     <header className="header-container"> 
       <div>
-        <IconButtonHeader icon={ faBars } navigateTo="/s"/>
+        {/* <IconButtonHeader icon={ faBars } navigateTo="/s"/> */}
+        <Dropdown />
 
         <IconButtonHeader icon={ faTimesCircle } navigateTo="/"/>
       </div>
@@ -14,9 +16,11 @@ export const NavBar = () => {
       <SearchBar/> 
 
       <div>
-        <IconButtonHeader icon={ faCommentDots } navigateTo="/s"/>
+        <IconButtonHeader icon={ faCommentDots } navigateTo="/sdfa"/>
 
-        <IconButtonHeader icon={ faBell } navigateTo="/s"/>
+        <IconButtonHeader icon={ faBell } navigateTo="/asdfa"/>
+
+        <IconButtonHeader icon={ faUser } navigateTo="/asdfa"/>
       </div>
     </header>
   )

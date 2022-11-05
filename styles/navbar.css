@@ -1,7 +1,7 @@
 .header-container {
     position: fixed;
     top: 0;
-    background-color: #f5a34c;
+    background-color: var(--color-primary);
     height: 45px;
     width: 100%;
     display: flex;
@@ -30,7 +30,11 @@
     display: none;
 }
 
-@media screen and (min-width: 480px) {
+.user-icon {
+    display: none;
+}
+
+@media screen and (min-width: 768px) {
     .header-container {
         height: 50px;
     }
@@ -50,7 +54,7 @@
         color: rgba(126, 126, 126, 0.759);
         font-size: 16px;
         height: 35px;
-        padding: 0 10px;
+        padding: 0 15px;
         width: 250px;
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
@@ -62,9 +66,10 @@
 
     .search-button {
         height: 35px;
-        width: 35px;
+        width: 50px;
         border-style: none;
-        background-color: white;
+        background-color: rgb(188, 188, 188);
+        opacity: 0.9;
         color: rgba(126, 126, 126, 0.759);
         font-size: 16px;
         border-top-right-radius: 10px;
@@ -72,30 +77,51 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
+    }
+
+    .search-button:hover {
+        filter: brightness(0.9);
     }
 
     .search-icon {
+        color: white;
         height: 16px;
         width: 16px;
     }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1024px) {
     .header-icon:hover,
     .search-icon:hover {
         cursor: pointer;
     }
 
-    .header-container div {
-        gap: 10px;
+    .icon-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        margin: 2px;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .icon-button:hover {
+        background-color: rgba(0, 0, 0, 0.105);
     }
 
     .search-field {
         width: 400px;
     }
 
-    .bars-icon {
+    div .menu-container {
         display: none;
+    }
+
+    .user-icon {
+        display: block;
     }
 }
 
